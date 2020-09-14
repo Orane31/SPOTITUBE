@@ -28,7 +28,8 @@
   </div>
   <br>
   <div class="text-center">
-    <%= link_to "Editer mon profil", edit_user_path(current_user), class: "btn btn-primary mr-5" %>
+    <%= link_to "Modifer mon profil", edit_user_path(current_user), class: "btn btn-primary mr-5" %>
+    <%= link_to "Modifier mon mot de passe", edit_user_password_path(current_user), class: "btn btn-primary mr-5" %>
     <%= link_to 'Retour Accueil', root_path, class:"btn btn-secondary" %>
     <br><br><br>
 
