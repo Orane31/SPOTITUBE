@@ -81,6 +81,7 @@ gem 'aws-sdk-s3', require: false
 
 #Use Dotenv to create environment variables
 gem 'dotenv'
+gem 'dotenv-rails'
 
 #Admin gem
 gem 'administrate'
