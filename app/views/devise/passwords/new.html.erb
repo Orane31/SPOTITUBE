@@ -1,16 +1,36 @@
-<h2>Forgot your password?</h2>
+<div id="primary" class="p-t-b-100 height-full">
+    <div class="container">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+            <div class="row">
+                <div class="col-md-10 mx-md-auto">
+                    <div class="text my-5 mb-5">
+                        <h4>Mot de passe oublié</h4>
+                    </div>
+                        <div class="col-md-7 card p-5">
+                            <form class="form-material">
+                                <!-- Input -->
+                                <div class="body">
+                                    <div class="col-md-10 mx-md-auto">
+                                        <div class="mt-5">
+                                            <div class="input-group mt-3">
+                                                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'form-control' %>
+                                            </div>
 
-<%= render "devise/shared/links" %>
+                                            <div class="actions mt-4">
+                                                <input type="submit" class="btn btn-outline-primary btn-sm pl-4 pr-4" value="Réinitaliser mon mot de passe">
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div> 
+                            </form>
+                        </div>                            
+                    </div> 
+                </div> 
+            </div> 
+        <% end %>
+    </div>
+</div>
