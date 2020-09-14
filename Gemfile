@@ -70,6 +70,7 @@ gem 'aws-sdk-s3', require: false
 
 
 gem 'dotenv'
+gem 'dotenv-rails'
 
 gem 'administrate'
 
