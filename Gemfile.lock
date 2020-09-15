@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: b194dd23bb4cf9f151e6f680e1ea243737d747e1
+  revision: fd90b99e2a8249ff84a1b2528a09674d428e208f
   branch: master
   specs:
     faker (2.13.0)
@@ -120,6 +120,9 @@ GEM
       responders
       warden (~> 1.2.3)
     dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.13.1)
@@ -128,7 +131,7 @@ GEM
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
-    jbuilder (2.10.0)
+    jbuilder (2.10.1)
       activesupport (>= 5.0.0)
     jmespath (1.4.0)
     jquery-rails (4.4.0)
@@ -286,6 +289,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv
+  dotenv-rails
   faker!
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
