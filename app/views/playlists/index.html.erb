@@ -1,30 +1,137 @@
-<head>
-<link rel="stylesheet" href="assets/css/app.css">
-</head>
-
-<body>
-<div class="jumbotron jumbotron-fluid text-center">
-  <h1 class="display-4 pt-5 font-weight-bold text-center">Index des playlists</h1>
-
-</div>
-
-<div class="col-12 text-center">
-  <% @playlists.each do |playlist| %>
-  <% if playlist.owner_id == current_user.id %>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="mt-0 text-center"><%= playlist.title  %></h5>
-        <p class="text-info"><%= playlist.description %></p>
-        <% if playlist.private_mode == false %>
-        <p><%= link_to "Voir cette playlist", playlist_path(:id => playlist.id), class: 'btn btn-outline-success btn-sm' %></p>
-        <% else%>
-        <p>Cette playlist est privée, sorry</p>
-        <% end %>
-      </div>
+<% if !user_signed_in? %>            
+    <div class="xv-slide" data-bg-possition="top" style="background-image:url('assets/img/demo/b1.jpg');">
+        <div class="has-bottom-gradient">
+            <div class="p-md-5 p-3">
+                <div class="row">
+                    <div class="col-12 col-lg-6 animated">
+                        <div class="xv-slider-content clearfix color-white">
+                            <br>
+                                <h1 class="s-64 mt-5 font-weight-lighter">Spotitube</h1>
+                                    <p class="s-24 font-weight-lighter">Vos playlists Youtube en mode collaboratif.</p>
+                                        <div class="pt-3">
+                                            <%= link_to "Créez votre première playlist !", new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+                                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <% end %>
-  <% end %>
-  <p><%= link_to "Créer ma playlist", new_playlist_path, class: 'btn btn-outline-success btn-sm' %></p>
-</div>
-<script src="assets/js/app.js"></script>
-</body>
+
+    <div class="row justify-content-center mb-3">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MYZ67-Sh7kM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <br>
+    <br>
+<% end %>
+
+<% if user_signed_in? %>
+
+    <main id="pageContent" class="page has-sidebar">
+
+        <div class="container-fluid relative animatedParent animateOnce">
+            <div class="animated pr-5 pl-5 ml-lg-5 mr-lg-5">
+                <section>
+                    <div class="relative mb-5">          
+                        <div class="pt-3">
+                            <p><%= link_to "Créer une nouvelle playlist", new_playlist_path, class: 'btn btn-outline-success btn-sm' %></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!---Index des playlists--->
+
+        <div class="container-fluid relative animatedParent animateOnce">
+                <div class="animated p-5 ml-lg-5 mr-lg-5">
+                    <section>
+                        <div class="relative mb-5">
+                            <br>
+                            <br>
+                            <br>
+                            <h1 class="mb-2 text-primary">Mes playlists</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Architecto atque aut blanditiis
+                                consectetur</p>
+                        </div>
+                        <div class="row has-items-overlay">
+                            <% @playlists.each do |playlist| %>
+                                <% if playlist.owner_id == current_user.id %>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+                                        <figure>
+                                            <div class="img-wrapper">
+                                                <%= image_tag("spoticon.png") %>
+                                                <div class="img-overlay text-white text-center">
+                                                    <a href="album-single.html">
+                                                    <a href="<%= playlist_path(:id => playlist.id) %>">
+                                                        <div class="figcaption mt-3">
+                                                            <i class="icon-link s-48"></i>
+                                                            <h5 class="mt-5"><%= playlist.title %></h5>
+                                                            <span>nombre de vidéos</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="figure-title text-center p-2">
+                                                    <h5><%= playlist.title %></h5>
+                                                    <span>nombre de vidéos</span>
+                                                </div>
+                                            </div>
+                
+                                        </figure>
+                                    </div>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+
+            <!---Index des collaboraions--->
+            <div class="container-fluid relative animatedParent animateOnce">
+                <div class="animated p-5 ml-lg-5 mr-lg-5">
+                    <section>
+                        <div class="relative mb-5">
+                            <br>
+                            <br>
+                            <br>
+                            <h1 class="mb-2 text-primary">Mes collaborations</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Architecto atque aut blanditiis
+                                consectetur</p>
+                        </div>
+                        <div class="row has-items-overlay">
+                            <% @playlists.each do |playlist| %>
+                                <% if collaborates?(playlist) %>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+                                        <figure>
+                                            <div class="img-wrapper">
+                                                <%= image_tag("spoticon.png") %>
+                                                <div class="img-overlay text-white text-center">
+                                                    <a href="<%= playlist_path(:id => playlist.id) %>">
+                                                        <div class="figcaption mt-3">
+                                                            <i class="icon-link s-48"></i>
+                                                            <h5 class="mt-5"><%= playlist.title %></h5>
+                                                            <span>Atif Aslam</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="figure-title text-center p-2">
+                                                    <h5><%= playlist.title %></h5>
+                                                    <span>Playlist de <%= playlist.owner.name %></span>
+                                                </div>
+                                            </div>
+                
+                                        </figure>
+                                    </div>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        
+
+
+
+    </main><!--@Page Content-->
+<% end %>

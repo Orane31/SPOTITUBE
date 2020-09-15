@@ -4,4 +4,7 @@ class Playlist < ApplicationRecord
     has_many :collaborators, through: :collaborations, class_name: 'User'
     has_many :videos
     has_one_attached :avatar
+
+    validates :title, presence: true, length: { maximum: 30 }
+
 end

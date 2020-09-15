@@ -1,24 +1,40 @@
-<%= form_for @playlist do |f| %>
-    <div class="form-group">
-        <label>Titre de la playlist</label>
-        <%= f.text_area :title, class: 'form-control' %>
-    </div>
+<div class=" col-md-12  row">
+    <p class="col-lg-1"></p>
+    <h1 class="col-lg-11 text-center" style="margin: 15px 0"> Modifier la playlist <%= @playlist.title %> </h1>
+</div>
+<div class ='align-middle'>
+	<div class="card m-5 p-5" style="height:auto">
+		<div class="card-body">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <%= form_for @playlist do |f| %>
+                        <div class="form-group">
+                            <label>Titre de la playlist</label>
+                            <%= f.text_area :title, class: 'form-control' %>
+                        </div>
 
-    <div class="form-group">
-    <label>Expliques-nous ton nouveau mood :</label>
-    <%= f.text_area :description, class: 'form-control' %>
-    </div>
+                        <div class="form-group">
+                            <label>Expliques-nous ton nouveau mood :</label>
+                            <%= f.text_area :description, class: 'form-control' %>
+                        </div>
 
-    <div class="form-group row">
-    <label>playlist privée ou accessible aux autres users ?</label>
-    <div class="col-lg-9">
-      <%= f.radio_button :private_mode, false %> Accessible aux autres
-      <%= f.radio_button :private_mode, true %> Privée
-    </div>
-  </div>
+                        <div class="form-group">
+                            <label>Playlist privée ou accessible aux autres users ?</label>
+                                <div class="row center">
+                                    <%= f.radio_button :private_mode, false %> Accessible aux autres
+                                </div>    
+                                <div class="row center">
+                                    <%= f.radio_button :private_mode, true %> Privée
+                                </div>
+                        </div>
 
-    <div class="form-group">
-        <button type="submit">Enregister les modifications</button>
-    </div>
+                        <div class="form-group">
+                            <button class="btn btn-outline-primary" type="submit">Enregister les modifications</button>
+                        </div>
 
-<% end %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<% if user_signed_in? %>
+  <main id="pageContent" class="page has-sidebar">
+
+            <!---Index des collaboraions--->
+            <div class="container-fluid relative animatedParent animateOnce">
+                <div class="animated p-5 ml-lg-5 mr-lg-5">
+                    <section>
+                        <div class="relative mb-5">
+                            <br>
+                            <br>
+                            <br>
+                            <h1 class="mb-2 text-primary">Mes collaborations</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Architecto atque aut blanditiis
+                                consectetur</p>
+                        </div>
+                        <div class="row has-items-overlay">
+                            <% @collaborations.each do |z| %>
+                                <% if collaborates?(z.playlist) %>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+                                        <figure>
+                                            <div class="img-wrapper">
+                                                <%= image_tag("spoticon.png") %>
+                                                <div class="img-overlay text-white text-center">
+                                                    <a href="<%= playlist_path(:id => z.playlist.id) %>">
+                                                        <div class="figcaption mt-3">
+                                                            <i class="icon-link s-48"></i>
+                                                            <h5 class="mt-5"><%= z.playlist.title %></h5>
+                                                            <span>Atif Aslam</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="figure-title text-center p-2">
+                                                    <h5><%= z.playlist.title %></h5>
+                                                    <span>Playlist de <%= z.playlist.owner.name %></span>
+                                                </div>
+                                            </div>
+                                        </figure>
+                                    </div>  
+                                <% end %> 
+                            <% end %>
+                        </div>
+                    </section>
+                </div>
+            </div>
+    </main>
+<% end %>

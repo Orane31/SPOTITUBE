@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spotitube</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  
+  <body class="sidebar-mini sidebar-collapse theme-dark  sidebar-expanded-on-hover">
+
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/flash' %>
+
+      <%= yield %>
+  
+
+
+  <footer>
+    <%= render 'layouts/footer' %>
+  </footer>
+  </body>
+</html>
