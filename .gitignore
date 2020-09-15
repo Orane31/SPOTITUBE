@@ -26,5 +26,5 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
  
-# Ignore .env : LE PREMIER QUI MET UN SLASH JE LE LYNCHE !!!
+# Ignore .env :
 .env

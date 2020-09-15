@@ -17,4 +17,9 @@ Rails.application.routes.draw do
   resources :collaborations, only: [:index, :show]
   
 
+  get '/static_pages/contact'
+  get '/static_pages/faq'
+  get '/static_pages/team'
+  get '/static_pages/about'
+  get '/static_pages/error_404'
 end
