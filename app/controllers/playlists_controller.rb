@@ -3,6 +3,7 @@ class PlaylistsController < ApplicationController
 
     def index
         @playlists = Playlist.all
+
     
     end
 
@@ -10,8 +11,8 @@ class PlaylistsController < ApplicationController
         @playlist = Playlist.find(params[:id])
         @videos = Video.all
         @collaborations = Collaboration.all
-       
     end
+       
 
     def new
         @playlist = Playlist.new
@@ -72,4 +73,4 @@ class PlaylistsController < ApplicationController
       params.require(:playlist).permit(:title, :description, :private_mode, :collaborative_mode, :owner_id)
     end
 
-end
+  end
