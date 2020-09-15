@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+    attr_accessor :playlist
+
     def index
         @videos = Video.all
 
@@ -16,6 +18,8 @@ class VideosController < ApplicationController
 
     def new
         @new_video = Video.new
+        @chosen_playlist = Playlist.find(params[:playlist_id])
+        
     end
 
 

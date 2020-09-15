@@ -15,9 +15,9 @@ class User < ApplicationRecord
       UserMailer.welcome_email(self).deliver_now
     end
 
-    validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
-    validates :password, presence: true, length: { minimum: 6 }
-    validates :description, length: { maximum: 300 }
-    validates :name, uniqueness: { case_sensitive: false }
+    #validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
+    #validates :password, presence: true, length: { minimum: 6 }
+    #validates :description, length: { maximum: 300 }
+    #validates :name, uniqueness: { case_sensitive: false }
 
 end
