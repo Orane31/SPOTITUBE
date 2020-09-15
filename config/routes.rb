@@ -17,4 +17,9 @@ Rails.application.routes.draw do
   resources :collaborations, only: [:index, :show]
   
 
+  get 'about', to: 'static_pages#about'
+  get 'faq', to: 'static_pages#faq'
+  get 'team', to: 'static_pages#team'
+  get 'contact', to: 'static_pages#contact'
+
 end
