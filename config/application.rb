@@ -15,5 +15,9 @@ module Spotitube
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    #Limit locales to FR and EN.
+    config.i18n.default_locale = :fr
+    config.i18n.available_locales [ :fr, :en ]
   end
 end

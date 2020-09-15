@@ -30,4 +30,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  baseline: "Your playlists in collaborative mode !"
+  new_user: "Create your very first playlist !"

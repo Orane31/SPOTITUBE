@@ -26,13 +26,23 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+#Use Devise to manage authentication
 gem 'devise'
+
+#Use tp in the rails console
 gem 'table_print'
+
+#Use Faker! ti generate fake but real-looking data
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # gem 'simple_form'
 
+#Use Stripe for credit card payments and direct debits
 gem 'stripe'
+
 # Use ActiveStorage variant
+
+#Use mini_magick to manipulate images with minimal use of memory
 # gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
@@ -66,14 +76,19 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 #gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+#Use the Amazon gem for Active Storage
 gem 'aws-sdk-s3', require: false
 
-
+#Use Dotenv to create environment variables
 gem 'dotenv'
+gem 'dotenv-rails'
 
+#Admin gem
 gem 'administrate'
 
 #gem 'therubyracer'
 
+#Use i18n gem for the internationalization of the app
+gem 'rails-i18n'
 
 
