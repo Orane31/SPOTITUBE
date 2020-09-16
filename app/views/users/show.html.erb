@@ -1,38 +1,106 @@
-<html>
+<!--Page Content-->
+<main id="pageContent" class="page has-sidebar">
+<div class="container-fluid relative animatedParent animateOnce p-lg-5">
+    <div class="card no-b shadow no-r">
+        <div class="row no-gutters">
+            <div class="col-md-4 b-r">
+                <div class="text-center p-5 mt-5">
+                    <figure class="avatar avatar-xl">
+                        <%if @user.avatar.attached?%>
+                        <%= image_tag @user.avatar, alt: 'avatar' %>
+                    <%else%>
+                        <%= image_tag "/assets/images/spoticon.png", alt: 'avatar' %>
+                    <%end%> 
+                    </figure>
+                    <div>
+                        <h4 class="p-t-10"><%= @user.name %></h4>
+                    </div>
+                    <%= link_to "Modifer mon profil", edit_user_path(current_user), class: "btn btn-outline-primary btn-sm  mt-3" %>
+                    <%= link_to "Modifier mon mot de passe", edit_user_password_path(current_user), class: "btn btn-outline-secondary btn-sm  mt-3" %> 
+                </div>
+            </div>
+            <div class="col-md-8 pt-3">
+                <div class="p5 b-b">
+                    <div class="pl-4 mt-4">
+                        <h4>Mon profil</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="p-4">
+                                <h5>Description</h5>
+                                <% if @user.description.blank? %>
+                                    <span>Vous n'avez pas encore complété cette partie.</span>
+                                <% else %>
+                                    <span><%= @user.description %></span>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% if @user_id == current_user.id? %>
+                <div class="p5 b-b">
+                    <div class="pl-4 mt-4">
+                        <h4>Information personnelles</h4>
+                        <small>Ces informations ne sont pas visibles par d'autres utilisateurs</small>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="p-4">
+                                <h5>Email</h5>
+                                <span><%= @user.email %></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+                <div class="p-4">
+                    <h4>Tous mes collaborateurs</h4>
+                    <ul class="list-inline mt-3">
+                        <li class="list-inline-item ">
+                            <img src="assets/img/demo/u13.png" alt="" class="img-responsive w-40px circle mb-3">
+                            <span>nom</span>
+                        </li>
+                        <li class="list-inline-item">
+                            <img src="assets/img/demo/u12.png" alt="" class="img-responsive w-40px circle mb-3">
+                        </li>
+                        <li class="list-inline-item">
+                            <img src="assets/img/demo/u11.png" alt="" class="img-responsive w-40px circle mb-3">
+                        </li>
+                        <li class="list-inline-item">
+                            <img src="assets/img/demo/u10.png" alt="" class="img-responsive w-40px circle mb-3">
+                        </li>
+                        <li class="list-inline-item">
+                            <img src="assets/img/demo/u9.png" alt="" class="img-responsive w-40px circle mb-3">
+                        </li>
+                        <li class="list-inline-item">
+                            <img src="assets/img/demo/u8.png" alt="" class="img-responsive w-40px circle mb-3">
+                        </li>
+                        <li class="list-inline-item ">
+                            <img src="assets/img/demo/u7.png" alt="" class="img-responsive w-40px circle mb-3">
+                        </li>
+                        <li class="list-inline-item">
+                            <img src="assets/img/demo/u6.png" alt="" class="img-responsive w-40px circle mb-3">
+                        </li>
+                        <li class="list-inline-item">
+                            <img src="assets/img/demo/u5.png" alt="" class="img-responsive w-40px circle mb-3">
+                        </li>
+                        <li class="list-inline-item">
+                            <img src="assets/img/demo/u4.png" alt="" class="img-responsive w-40px circle mb-3">
+                        </li>
+                        <li class="list-inline-item">
+                            <img src="assets/img/demo/u3.png" alt="" class="img-responsive w-40px circle mb-3">
+                        </li>
+                        <li class="list-inline-item">
+                            <img src="assets/img/demo/u2.png" alt="" class="img-responsive w-40px circle mb-3">
+                        </li>
+                    </ul>
+                </div>
 
-<div class='container'>
+            </div>
+        </div>
 
- <h1 class="display-4-selection text-center my-5">Mon Profil</h1>
-
-
-  <div class="row justify-content-center">
-    <div class="card border-primary">
-      <div class="card-header">
-        <p class="h3 text-center"> <%= @user.name %></p>
-      </div>
-
-      <h3 class="text-center">Votre photo de profil</h3>
-          <%if @user.avatar.attached?%>
-            <%= image_tag @user.avatar, alt: 'avatar' %>
-          <%else%>
-            <p class="text-center">=== Vous n'avez pas encore de photo de profil ===</p>
-          <%end%> 
-
-      <div class="card-body text-primary">
-        <h5 class="card-title text-center">------------ Mes informations ------------ </h5>
-        <p class="card-text text-center"><span class="h6 text-center">Ma description:</span><br> <span class="ml-3 text-center"><%= @user.description %></span><br></p>
-          <p class="card-text text-center"><span class="h6 text-center">Mon email:</span><br> <span class="ml-3 text-center" ><%= @user.email %></span><br></p><br>
-
-      </div>
     </div>
-  </div>
-  <br>
-  <div class="text-center">
-    <%= link_to "Modifer mon profil", edit_user_path(current_user), class: "btn btn-primary mr-5" %>
-    <%= link_to "Modifier mon mot de passe", edit_user_password_path(current_user), class: "btn btn-primary mr-5" %>
-    <%= link_to 'Retour Accueil', root_path, class:"btn btn-secondary" %>
-    <br><br><br>
 
-  </div>
 </div>
-</html>
+
+</main><!--@Page Content-->
