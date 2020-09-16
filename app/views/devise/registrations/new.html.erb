@@ -38,6 +38,12 @@
                                                 <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", placeholder: 'Email', class: 'form-control' %>
                                         </div>
                                     </div>
+                                    <!-- Input name -->
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                                <%= f.text_field :name, autofocus: true, required: true, autocomplete: "pseudo", placeholder: 'Pseudo', class: 'form-control' %>
+                                        </div>
+                                    </div>
                                     <!-- Input password -->
                                     <div class="form-group form-float">
                                         <div class="form-line">
@@ -58,7 +64,6 @@
                                             <small>Mot de passe identique au précédent</small>
                                         </div>
                                         <br>
-
                                     <input type="submit" class="btn btn-outline-primary btn-sm pl-4 pr-4" value="S'inscrire">
                                 </div>
             <% end %>
