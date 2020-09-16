@@ -24,20 +24,6 @@
 
 <% if user_signed_in? %>
 
-    <main id="pageContent" class="page has-sidebar">
-
-        <div class="container-fluid relative animatedParent animateOnce">
-            <div class="animated pr-5 pl-5 ml-lg-5 mr-lg-5">
-                <section>
-                    <div class="relative mb-5">          
-                        <div class="pt-3">
-                            <p><%= link_to "Créer une nouvelle playlist", new_playlist_path, class: 'btn btn-outline-success btn-sm' %></p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-
         <!---Index des playlists--->
 
         <div class="container-fluid relative animatedParent animateOnce">
@@ -59,10 +45,8 @@
                                             <div class="img-wrapper">
                                                 <%= image_tag("spoticonlightgreen.png") %>
                                                 <div class="img-overlay text-white text-center">
-                                                    <a href="album-single.html">
                                                     <a href="<%= playlist_path(:id => playlist.id) %>">
-                                                        <div class="figcaption mt-3">
-                                                            <i class="icon-link s-48"></i>
+                                                        <div>
                                                             <h5 class="mt-5"><%= playlist.title %></h5>
                                                             <span>nombre de vidéos</span>
                                                         </div>
@@ -105,10 +89,9 @@
                                                 <%= image_tag("spoticonlightgreen.png") %>
                                                 <div class="img-overlay text-white text-center">
                                                     <a href="<%= playlist_path(:id => playlist.id) %>">
-                                                        <div class="figcaption mt-3">
-                                                            <i class="icon-link s-48"></i>
+                                                        <div>
                                                             <h5 class="mt-5"><%= playlist.title %></h5>
-                                                            <span>Atif Aslam</span>
+                                                            <span>Playlist de <%= playlist.owner.name %></span>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -131,4 +114,5 @@
 
 
     </main><!--@Page Content-->
-<% end %>
+
+    <% end %>
