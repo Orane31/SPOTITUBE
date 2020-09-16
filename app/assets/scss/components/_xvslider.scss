@@ -3,10 +3,19 @@
   background-repeat: no-repeat;
   background-size: cover !important;
   height: 440px;
-  background-image:linear-gradient(to top, rgba(0, 0, 0, 0) 0, #66ccff 100%);
+  background-image:linear-gradient(black, #3A6073, #131722 100%);
   
 }
 
+.mainfooter.xv-slide {
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  height: 300px;
+  background-image:linear-gradient(#131722, #3A6073, black 100%);
+  margin-top: 100px;
+  margin-bottom: -300px;
+}
 
 .lSAction a {
 

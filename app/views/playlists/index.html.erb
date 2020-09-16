@@ -13,16 +13,13 @@
                                         </div>
                         </div>
                     </div>
+                    <div class="col">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/MYZ67-Sh7kM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="row justify-content-center mb-3 mt-3">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/MYZ67-Sh7kM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <br>
-    <br>
 <% end %>
 
 <% if user_signed_in? %>
@@ -60,7 +57,7 @@
                                     <div class="col-lg-3 col-md-4 col-sm-6 my-2">
                                         <figure>
                                             <div class="img-wrapper">
-                                                <%= image_tag("spoticon.png") %>
+                                                <%= image_tag("spoticonlightgreen.png") %>
                                                 <div class="img-overlay text-white text-center">
                                                     <a href="album-single.html">
                                                     <a href="<%= playlist_path(:id => playlist.id) %>">
@@ -105,7 +102,7 @@
                                     <div class="col-lg-3 col-md-4 col-sm-6 my-2">
                                         <figure>
                                             <div class="img-wrapper">
-                                                <%= image_tag("spoticon.png") %>
+                                                <%= image_tag("spoticonlightgreen.png") %>
                                                 <div class="img-overlay text-white text-center">
                                                     <a href="<%= playlist_path(:id => playlist.id) %>">
                                                         <div class="figcaption mt-3">

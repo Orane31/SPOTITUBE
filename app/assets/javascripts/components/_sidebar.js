@@ -205,7 +205,7 @@ function _init() {
 
                     $(".sidebar").slimscroll({
                         height: ($(window).height()) + "px",
-                        color: "#ff1744",
+                        color: "#8FB4C7",
                         size: "3px",
                         distance: "5px",
                         //railVisible: true,
