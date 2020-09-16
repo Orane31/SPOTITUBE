@@ -34,9 +34,11 @@
                             <br>
                             <br>
                             <h1 class="mb-2 text-primary">Mes playlists</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Architecto atque aut blanditiis
-                                consectetur</p>
+                            <% if Playlist.count == 0 %>
+                            <p>Vous n'avez pas encore de playlist</p>
+                            <% end %>
                         </div>
+
                         <div class="row has-items-overlay">
                             <% @playlists.each do |playlist| %>
                                 <% if playlist.owner_id == current_user.id %>
@@ -48,13 +50,13 @@
                                                     <a href="<%= playlist_path(:id => playlist.id) %>">
                                                         <div>
                                                             <h5 class="mt-5"><%= playlist.title %></h5>
-                                                            <span>nombre de vidéos</span>
+                                                            <span><%= playlist.videos.count %> vidéo(s)</span>
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="figure-title text-center p-2">
                                                     <h5><%= playlist.title %></h5>
-                                                    <span>nombre de vidéos</span>
+                                                    <span><%= playlist.videos.count %>vidéos(s)</span>
                                                 </div>
                                             </div>
                 
@@ -77,8 +79,9 @@
                             <br>
                             <br>
                             <h1 class="mb-2 text-primary">Mes collaborations</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Architecto atque aut blanditiis
-                                consectetur</p>
+                            <% if Collaboration.where(:collaborator_id => current_user.id).count == 0 %>
+                                <p>Vous n'avez pas encore été désigné comme collaborateur sur une playlist.</p>
+                            <% end %>
                         </div>
                         <div class="row has-items-overlay">
                             <% @playlists.each do |playlist| %>
