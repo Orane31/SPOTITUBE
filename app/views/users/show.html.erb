@@ -15,7 +15,7 @@
           <%if @user.avatar.attached?%>
             <%= image_tag @user.avatar, alt: 'avatar' %>
           <%else%>
-            <p class="text-center">=== Vous n'avez pas encore de photo de profil ===</p>
+            <%= image_tag("default_profile.jpg") %>
           <%end%> 
 
       <div class="card-body text-primary">
