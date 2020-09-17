@@ -127,23 +127,23 @@
     font-weight: 500;
   }
   &.alert-info {
-    background-color: #f6fafd;
-    border-color: #d9eff7;
+    background-color: #0491fd;
+    border-color: #fafafa;
   }
   &.alert-warning {
-    background-color: rgba(252, 248, 227, .3);
+    background-color: rgba(255, 213, 0, 0.3);
     border-color: #faebcc;
-    color: #8a6d3b;
+    color: #000000;
   }
   &.alert-danger {
-    background-color: rgba(242, 222, 222, .3);
+    background-color: rgba(255, 0, 0, 0.3);
     border-color: #ebccd1;
-    color: #a94442;
+    color: #f8f8f8;
   }
   &.alert-success {
-    background-color: rgba(223, 240, 216, .3);
+    background-color: rgba(72, 255, 0, 0.3);
     border-color: #d6e9c6;
-    color: #3c763d;
+    color: #d9ebd9;
   }
 }
 
