@@ -50,33 +50,36 @@
                                             <div class="img-wrapper">
                                                 <%= image_tag("heartless.png") %>
                                                 <div class="img-overlay text-white text-center">
-                                                    <a href="<%= playlist_path(:id => playlist.id) %>">
-                                                        <div>
-                                                            <h5 class="mt-5"><%= playlist.title %></h5>
-                                                            <% if playlist.videos.count < 1 %>
-                                                                <span><%= playlist.videos.count %> vidéos</span>
-                                                            <% elsif playlist.videos.count == 0 %>
-                                                                <span>Cette playlist est vide</span>
-                                                            <% else playlist.videos.count == 1 %>
-                                                                <span><%= playlist.videos.count %> vidéo</span>
-                                                            <% end %>
-                                                            <i class="fas fa-link"></i>
-                                                        </div>
-                                                    </a>
+                                               
+                                                    <%= link_to (playlist_path(:id => playlist.id)) do %> 
+                                                        
+                                                            <h5 class="mt-5 mb-5"><%= playlist.title %></h5>
+                                                            <div class="mb-b">
+                                                                <%= image_tag("link-icon.png", size: "30") %>
+                                                            </div>
+                                                            <div>
+                                                                <% if playlist.videos.count == 0 %>
+                                                                    <span class="mt-5 mb-5">Cette playlist est vide</span>
+                                                                <% elsif playlist.videos.count == 1 %>
+                                                                    <span class="mt-5 mb-5"><%= playlist.videos.count %> vidéo</span>
+                                                                <% else playlist.videos.count < 1 %>
+                                                                    <span class="mt-5 mb-5"><%= playlist.videos.count %> vidéos</span>
+                                                                <% end %>
+                                                            </div>
+                                                    <% end %>
                                                 </div>
                                                 <div class="figure-title text-center p-2">
                                                     <h5><%= playlist.title %></h5>
-                                                    <% if playlist.videos.count < 1 %>
-                                                        <span><%= playlist.videos.count %> vidéos</span>
-                                                    <% elsif playlist.videos.count == 0 %>
+                                                    <% if playlist.videos.count == 0 %>
                                                         <span>Cette playlist est vide</span>
-                                                    <% else playlist.videos.count == 1 %>
+                                                    <% elsif playlist.videos.count == 1 %>
                                                         <span><%= playlist.videos.count %> vidéo</span>
+                                                    <% else playlist.videos.count < 1 %>
+                                                        <span><%= playlist.videos.count %> vidéos</span>
                                                     <% end %>
                                                     
                                                 </div>
                                             </div>
-                
                                         </figure>
                                     </div>
                                 <% end %>
@@ -109,14 +112,14 @@
                                             <div class="img-wrapper">
                                                 <%= image_tag("heartless.png") %>
                                                 <div class="img-overlay text-white text-center">
-                                                    <a href="<%= playlist_path(:id => playlist.id) %>">
+                                                    <%= link_to (playlist_path(:id => playlist.id)) do %> 
                                                         <div>
                                                             <h5 class="mt-5"><%= playlist.title %></h5>
                                                             <span>Playlist de <%= playlist.owner.name %></span>
                                                         </div>
                                                         <div class="s-24 text-primary icon-link">
                                                         </div>
-                                                    </a>
+                                                    <% end %>
                                                 </div>
                                                 <div class="figure-title text-center p-2">
                                                     <h5><%= playlist.title %></h5>
