@@ -21,7 +21,11 @@
                                                     <%if @user.avatar.attached?%>
                                                     <%= image_tag @user.avatar, alt: 'avatar' %>
                                                 <%else%>
+<<<<<<< Updated upstream
                                                     <%= image_tag "/assets/images/spoticon.png", alt: 'avatar' %>
+=======
+                                                    <%= image_tag "spoticonlightgreen.png" %>
+>>>>>>> Stashed changes
                                                 <%end%> 
                                         </figure>
                                         <h4><%= @user.name %></h4>
