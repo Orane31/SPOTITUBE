@@ -45,7 +45,7 @@
                                     <div class="col-lg-3 col-md-4 col-sm-6 my-2">
                                         <figure>
                                             <div class="img-wrapper">
-                                                <%= image_tag("spoticonlightgreen.png") %>
+                                                <%= image_tag("a150.jpg") %>
                                                 <div class="img-overlay text-white text-center">
                                                     <a href="<%= playlist_path(:id => playlist.id) %>">
                                                         <div>
@@ -56,7 +56,14 @@
                                                 </div>
                                                 <div class="figure-title text-center p-2">
                                                     <h5><%= playlist.title %></h5>
-                                                    <span><%= playlist.videos.count %>vidéos(s)</span>
+                                                    <% if playlist.videos.count < 1 %>
+                                                    <span><%= playlist.videos.count %> vidéos</span>
+                                                    <% elsif playlist.videos.count == 0 %>
+                                                    <span>Cette playlist est vide</span>
+                                                    <% else playlist.videos.count == 1 %>
+                                                    <span><%= playlist.videos.count %> vidéo</span>
+                                                    <% end %>
+
                                                 </div>
                                             </div>
                 
