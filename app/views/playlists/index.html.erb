@@ -24,7 +24,7 @@
 
 <% if user_signed_in? %>
 
-        <!---Index des playlists--->
+        <!---Playlists Index --->
 
         <div class="container-fluid relative animatedParent animateOnce">
                 <div class="animated p-5 ml-lg-5 mr-lg-5">
@@ -34,11 +34,14 @@
                             <br>
                             <br>
                             <h1 class="mb-2 text-primary">Mes playlists</h1>
-                            <% if Playlist.count == 0 %>
+                            <% if current_user.playlists.count == 0 %>
+                          
                             <p>Vous n'avez pas encore de playlist</p>
-                            <% end %>
-                        </div>
+                            <%= link_to "Créez votre première playlist !", new_playlist_path, class: 'btn btn-primary btn-lg' %>
 
+                            
+                        </div>
+                        <% else %>
                         <div class="row has-items-overlay">
                             <% @playlists.each do |playlist| %>
                                 <% if playlist.owner_id == current_user.id %>
@@ -78,6 +81,7 @@
                                     </div>
                                 <% end %>
                             <% end %>
+                        <% end %>
                         </div>
                     </section>
                 </div>

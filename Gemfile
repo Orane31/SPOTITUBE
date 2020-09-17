@@ -73,5 +73,5 @@ gem 'dotenv'
 gem 'dotenv-rails'
 
 gem 'administrate'
-
+gem "font-awesome-rails"
 #gem 'therubyracer'

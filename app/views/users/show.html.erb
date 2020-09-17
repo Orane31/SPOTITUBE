@@ -1,54 +1,47 @@
 <div id="primary" class="p-t-b-30 height-full">
     <div class="container">
 
-        <!-- Sign in form -->
+        <!-- User profile -->
         <div class="row">
             <div class="col-md-10 mx-md-auto">
                 <div class="mt-5">
                     <div class="row grid">
                         <div class="col-md-5  p-5">
                             <h1 class="mt-3 font-weight-lighter">Mon profil</h1>
-                            <%= link_to "Modifer mon profil", edit_user_path(current_user), class:"btn btn-outline-primary btn-sm mr-4 " %>
-                                    <br>
-                                    <%= link_to "Modifier mon compte utilisateur", edit_user_password_path(current_user), class:"btn btn-outline-secondary btn-sm mt-3" %>
+                                <%= link_to "Modifer mon profil", edit_user_path(current_user), class:"btn btn-outline-primary btn-sm mr-4 mt-3" %>
+                                <br>
+                                <%= link_to "Retour vers la page d'accueil", root_path, class:"btn btn-outline-secondary btn-sm mt-3" %>
+
                         </div>
                         <div class="col card p-5" style="width:600px;">
-                                <!-- Input -->
-                                <div class="body row">
-                                    <!-- Input playlist title -->
-                                    <div class="col">
+                            <div class="body row">
+
+                                <!-- User infos and picture -->            
+                                <div class="col">
+                                    <h4><%= @user.name %></h4>
                                         <figure class="avatar avatar-xl">
-                                                    <%if @user.avatar.attached?%>
-                                                    <%= image_tag @user.avatar, alt: 'avatar' %>
+                                                <%if @user.avatar.attached?%>
+                                                    <%= image_tag @user.avatar %>
                                                 <%else%>
-<<<<<<< Updated upstream
-                                                    <%= image_tag "/assets/images/spoticon.png", alt: 'avatar' %>
-=======
                                                     <%= image_tag "spoticonlightgreen.png" %>
->>>>>>> Stashed changes
                                                 <%end%> 
                                         </figure>
-                                        <h4><%= @user.name %></h4>
-                                    </div>
-                                    <!-- Input playlist description-->
-                                    <div class="col">
-                                        <div>
-                                            <h5 class="mb-1">Description</h5>
-                                            <% if @user.description.blank? %>
-                                                <span>Vous n'avez pas encore complété cette partie.</span>
-                                            <% else %>
-                                                <span><%= @user.description %></span>
-                                            <% end %>
-                                        </div>
-                                    </div>
-                                    <!-- Radio buttons private mode -->
-                                    
-                                    
+                                            
                                 </div>
 
-            
+                                <!-- user description-->
+                                <div class="col">
+                                    <div>
+                                        <h5 class="mb-1">Description</h5>
+                                        <% if @user.description.blank? %>
+                                            <span>Vous n'avez pas encore complété cette partie.</span>
+                                        <% else %>
+                                            <span><%= @user.description %></span>
+                                        <% end %>
+                                    </div>
+                                    </div>                              
+                                </div>            
                         </div>
-                        
                     </div>
                 </div>
             </div>

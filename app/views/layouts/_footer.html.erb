@@ -39,12 +39,14 @@
       </div>
     	<div class="col-md-3  mt-5 ">
     		<h4>Suivez-nous</h4>
-            <ul class="social-network social-circle">
-             <li><%= link_to image_tag(""), "https://www.facebook.com/Spotitube-102007101660178/?ref=page_internal" %><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></li>
-             <li><%= link_to image_tag(""), "https://twitter.com/Spotitube1" %><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></li>
-             <li><%= link_to image_tag(""), "https://www.instagram.com/spotitube_team/" %><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></li>
-            </ul>				
+       
+            <div class="social-network social-circle">
+             <%= link_to fa_icon("facebook" ), "https://www.facebook.com/Spotitube-102007101660178/?ref=page_internal", class: "fa-3x mr-2" %>
+             <%= link_to fa_icon("twitter"), "https://twitter.com/Spotitube1", class: "fa-3x mr-2"  %>
+             <%= link_to fa_icon("instagram"), "https://www.instagram.com/spotitube_team/", class: "fa-3x mr-2" %>
+            </div>			
 		</div>
+   
     </div>
 	<div class="row mt-5">
 		<div class="col-md-12 copy">
