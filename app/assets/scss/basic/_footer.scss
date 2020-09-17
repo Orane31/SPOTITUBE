@@ -19,6 +19,7 @@ footer {position: absolute; bottom: 0; left: 0; right: 0}
   .footer-links {
     padding-top: 5px;
     li {
+     
       display: block;
       list-style: none;
       a {
@@ -32,6 +33,8 @@ footer {position: absolute; bottom: 0; left: 0; right: 0}
   }
   .social {
     padding: 20px 0;
+    flex-direction: column;
+    float: right;
 
   }
   .copyright {
@@ -39,6 +42,7 @@ footer {position: absolute; bottom: 0; left: 0; right: 0}
   }
   li {
     position: relative;
+    
   }
 
   .customeIconList {
@@ -53,6 +57,7 @@ footer {position: absolute; bottom: 0; left: 0; right: 0}
   }
   ul.customeIconList > li {
     padding-left: 30px;
+  
   }
   .customeIconList li .icon {
     position: absolute;
@@ -77,6 +82,7 @@ ul.arrow-list {
     padding-left: 20px;
     margin-bottom: 10px;
     position: relative;
+    
     &::before {
       content: "";
       display: block;

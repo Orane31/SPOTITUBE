@@ -11,6 +11,8 @@
       border-radius: 100%;
       color: #fff;
       margin-right: 5px;
+      flex-direction: column;
+      float: right;
       &:hover{
         box-shadow: $hover-shadow;
       }
