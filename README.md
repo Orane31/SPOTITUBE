@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The SPOTITUBE Team is composed of five coding enthusiasts coming from various parts of France.
 
-Things you may want to cover:
+###The SPOTITUBE app enables you to create collaborative playlists with YouTube videos:
 
-* Ruby version
+- It is written in Ruby On Rails using the THP guidelines ;-)
 
-* System dependencies
+- Deployed on Heroku : http://stt-dev.herokuapp.com
 
-* Configuration
+- Rails 5.2.x w/ PostgreSQL, Ruby 2.5.1.
 
-* Database creation
+- Dependencies : Devises, AWS, bcrypt... among others.
 
-* Database initialization
+- Functionalities :
 
-* How to run the test suite
+  - Create private or public playlists
+  - Invite collaborators on playlists
+  - Add/watch videos on playlists you've been invited on
+  - Create accounts w/ profile pictures
+    ...and eventually much more to come ^^
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- ...
