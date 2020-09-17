@@ -16,78 +16,71 @@
                                     <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Sûr(e)?" }, method: :delete, class:"btn btn-outline-secondary mr-4" %>
                                 </div>
                         </div>
-                                <div class="col card p-5" style="width:450px;">
-
-                                    <div class="body">
-                                    <!-- Input user name-->
-                                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-                                        <%= render "devise/shared/error_messages", resource: resource %>
-                                            <div class="form-group form-float row mr-5">
-                                                <div class="col">
-                                                    <h5 class="mb-1">Pseudo</h5>
-                                                </div>
-                                                <div class="form-group">
-                                                    <%= f.text_field :name, class:"form-control" %>
-                                                </div>
-                                            </div>
-
-                                    <!-- Input user email-->
-                                            <div class="col">
-                                                <div>
-                                                    <h5 class="mb-1">Adresse email</h5>
-                                                </div>
-                                                <div class="form-group">
-                                                    <%= f.email_field :email, autofocus: true, class:"form-control", autocomplete: "email" %>
-                                                </div>
-                                                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                                                    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-                                                <% end %>
-                                                </div>
-                                                <br>
-                                            </div>
-
-                                    <!-- Input user description-->
-                                            <div class="form-group form-float row mr-5">
-                                                <div class="col">
-                                                    <div class="mb-2 mt-2">
-                                                        <h5>Nouveau mot de passe</h5>
-                                                        <% if @minimum_password_length %>
-                                                            <em><%= @minimum_password_length %> caractères minimum</em>
-                                                        <% end %>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <%= f.password_field :password, class:"form-control", autocomplete: "new-password" %>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div>
-                                                        <h5 class="mb-1 mt-2">Confirmer le nouveau mot de passe</h5>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <%= f.password_field :password_confirmation, class:"form-control", autocomplete: "new-password" %>
-                                                    </div>
-                                                </div>
-                                                <br>
-                                            </div>
-                                            <div class="form-group form-float row mr-5">
-                                                <div class="col">
-                                                    <div class="mb-1 mt-2">
-                                                        <h5>Mot de passe actuel</h5>
-                                                        <em>A renseigner pour valider</em>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <%= f.password_field :current_password, class:"form-control", autocomplete: "current-password", style:'width:180px;' %>
-                                                    </div>
-                                                </div>
-                                                <div class="pt-2 mt-5">
-                                                    <input type="submit" class="btn btn-outline-primary pl-4 pr-4" value="Valider">
-                                                </div>
-                                                <br>
-                                            </div>
-                                        <% end %>
-                                        
+                        <div class="col card p-5" style="width:450px;">
+                            <div class="body">
+                                <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                                <%= render "devise/shared/error_messages", resource: resource %>
+                                <div class="form-group form-float row mr-5">
+                                    <!-- Edit user name-->
+                                    <div class="col form-group">
+                                        <h5 class="mb-1">Pseudo</h5>
+                                        <%= f.text_field :name, class:"form-control" %>
+                                    </div>
+                                    <!-- Edit user email-->
+                                    <div class="col form-group">
+                                        <h5 class="mb-1">Adresse email</h5>
+                                        <%= f.email_field :email, autofocus: true, class:"form-control", autocomplete: "email" %>
+                                    </div>
+                                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                                        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                                    <% end %>
+                                </div>
+                                    <!-- Edit user password-->
+                                <div class="form-group form-float row mr-5">
+                                    <div class="col">
+                                        <!-- New password-->
+                                        <div class="mb-2 mt-2">
+                                            <h5>Nouveau mot de passe</h5>
+                                            <% if @minimum_password_length %>
+                                                <em><%= @minimum_password_length %> caractères minimum</em>
+                                            <% end %>
+                                        </div>
+                                        <div class="form-group">
+                                            <%= f.password_field :password, class:"form-control", autocomplete: "new-password" %>
+                                        </div>
+                                    </div>
+                                    <!-- Password confirmation-->
+                                    <div class="col">
+                                        <div>
+                                            <h5 class="mb-1 mt-2">Confirmer le nouveau mot de passe</h5>
+                                        </div>
+                                        <div class="form-group">
+                                            <%= f.password_field :password_confirmation, class:"form-control", autocomplete: "new-password" %>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Edit user info submi-->
+                                <div class="form-group form-float row mr-5">
+                                    <div class="col">
+                                    <!-- Current password required to submit-->
+                                        <div class="mb-1 mt-2">
+                                            <h5>Mot de passe actuel</h5>
+                                            <em>A renseigner pour valider</em>
+                                        </div>
+                                        <div class="form-group">
+                                            <%= f.password_field :current_password, class:"form-control", autocomplete: "current-password", style:'width:180px;' %>
+                                        </div>
+                                    </div>
+                                    <!-- Submit button-->
+                                    <div class="pt-2 mt-5">
+                                        <input type="submit" class="btn btn-outline-primary pl-4 pr-4" value="Valider">
+                                    </div>
+                                    <br>
+                                </div>
+                                <% end %>       
+                            </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
