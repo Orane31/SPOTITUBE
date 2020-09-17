@@ -1,12 +1,5 @@
 <div id="primary" class="p-t-b-30 height-full">
     <div class="container">
-        <div class="text-center s-14 l-s-2 my-5">
-            <a class="my-5" href="index.html">
-
-                <span>SPOTITUBE</span>
-
-            </a>
-        </div>
         <!-- Sign in form -->
         <div class="row">
             <div class="col-md-10 mx-md-auto">
@@ -22,8 +15,9 @@
                                 <div class="body">
                                     <!-- Input playlist title -->
                                     <div class="form-group form-float mr-5" >
-                                        <div>
-                                            <h5 class="mb-1">Titre de la playlist</h5>
+                                        <div class="mb-2">
+                                            <h5>Titre de la playlist</h5>
+                                            <small>28 caractères maximum</small>
                                         </div>
                                         <div class="form-line">
                                                 <%= form.text_field :title, class: "form-control", placeholder: 'Insérer le titre ici', class: 'form-control' %>

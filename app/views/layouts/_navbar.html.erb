@@ -1,36 +1,37 @@
   <!-----NAVBAR------>
+    <div>
         <nav class="navbar navbar-expand-lg">
-              <%= link_to "SPOTITUBE", root_path, :class => "navbar-brand" %>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                  </button>
-
+            <div class="brand img">
+              <%= link_to image_tag("spoticonlightgreen.png"), root_path, :class => "navbar-brand", style:"width:50px;" %>
+              <%= link_to "SPOTITUBE", root_path, :class => "navbar-brand", style:"font-size:14px;  font-color:#606676;" %>
+            </div>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 
           <% if user_signed_in? %>
-          <div class="navbar-nav m-2">
-              <%= link_to "Mes playlists", playlists_path, :class => "dropdown-item-primary" %></span>
-          </div>  
-          <div class="navbar-nav m-2">
-              <%= link_to "Mes collaborations", collaborations_path, :class => "dropdown-item-primary" %></span>
-          </div>
-          <div class="navbar-nav m-2">
-              <%= link_to "Mon profil", user_path(:id => current_user.id), :class => "dropdown-item-primary" %>
-          </div>
-          <div class="navbar-nav m-2">
-              <%= button_to "Déconnexion", destroy_user_session_path, :class => "btn btn-outline-primary", method: :delete %></span>
-          </div>
-          <% end %>
-          <% if !user_signed_in? %>
-          <div class="navbar-nav m-2">
-              <%= link_to "S'inscrire", new_user_registration_path, :class => "dropdown-item-primary" %></span>
-          </div>
-          <div class="navbar-nav m-2">
-              <%= link_to "Se connecter", new_user_session_path, :class => "dropdown-item-primary" %></span>
-          </div>
-          <% end %>
+            <div class="navbar-nav m-2">
+                <%= link_to "Créer une nouvelle playlist", new_playlist_path, :class => "dropdown-item-primary" %>
+            </div>
+            <div class="navbar-nav m-2">
+                <%= link_to "Mes playlists", playlists_path, :class => "dropdown-item-primary" %></span>
+            </div>  
+            <div class="navbar-nav m-2">
+                <%= link_to "Mon profil", user_path(:id => current_user.id), :class => "dropdown-item-primary" %>
+            </div>
+            <div class="navbar-nav m-2">
+                <%= button_to "Déconnexion", destroy_user_session_path, :class => "btn btn-outline-primary", method: :delete %></span>
+            </div>
+            <% end %>
+            <% if !user_signed_in? %>
+            <div class="navbar-nav m-2">
+                <%= link_to "S'inscrire", new_user_registration_path, :class => "dropdown-item-primary" %></span>
+            </div>
+            <div class="navbar-nav m-2">
+                <%= link_to "Se connecter", new_user_session_path, :class => "dropdown-item-primary" %></span>
+            </div>
+            <% end %>
 
-        </div>
+            </div>
 
         </nav>
+    </div>
 

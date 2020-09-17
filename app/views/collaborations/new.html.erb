@@ -1,18 +1,22 @@
-<h2>Tu peux permettre à un utilisateur d''acéder à ta playlist !</h2>
+<br>
+<br>
+<div class="container"><h2>Tu peux permettre à un utilisateur d'acéder à ta playlist !</h2>
 
+    <form action="<%= playlist_collaborations_path %>" method="POST">
+        <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+        <br>
+            <div class="form-group">
 
+                <label for="collaborator_id">Choisis un utilisateur : </label>
+                <br>
+                <br>
+                    <%= select_tag(:collaborator_id, options_from_collection_for_select(@chosefrom, "id", "name")) %>
+                <br>
+                <br>
+            
 
-  <form action="<%= playlist_collaborations_path %>" method="POST">
-      <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
-      <br>
-          <div class="form-group">
+            </div>
+        <button type="submit" class="btn btn-dark">Valider</button>
+    </form>
 
-              <label for="collaborator_id">Collaborator</label>
-                  <%= select_tag(:collaborator_id, options_from_collection_for_select(@chosefrom, "id", "name")) %>
-            <br>
-        
-
-          </div>
-      <button type="submit" class="btn btn-dark">Ajouter ma vidéo</button>
-  </form>
-
+</div>

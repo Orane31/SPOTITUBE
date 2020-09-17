@@ -9,7 +9,7 @@ if ($('#waveform').length > 0) {
             container: '#waveform',
             backend: 'MediaElement',
             waveColor: $('body').hasClass('theme-dark') ? '#243049' : '#ecf0f5',
-            progressColor: '#ff1744',
+            progressColor: '#8FB4C7',
             height: 50,
             responsive: false,
             barWidth: 3,
