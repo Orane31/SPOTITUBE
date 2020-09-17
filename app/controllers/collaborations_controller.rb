@@ -9,6 +9,11 @@ class CollaborationsController < ApplicationController
         def new
             @people = User.all
             @chosefrom = @people.reject{ |user| user.id == current_user.id }
+            if params[:term]
+                @people = User.search_by_full_name(params[:term])
+              else
+                @people = User.all
+              end
         end
 
         
