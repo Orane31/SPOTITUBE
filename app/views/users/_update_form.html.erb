@@ -11,8 +11,8 @@
                             <h1 class="mt-3 mb-6 font-weight-lighter">Modifier mon profil</h1>
                             <br>
                                 <div class="text-center mt-3">
-                                    <%= link_to 'Voir mon profil', @user, class:"btn btn-outline-primary mr-4" %>
-                                    <%= link_to "Page d'accueil", root_path, class:"btn btn-outline-secondary" %>
+                                    <%= link_to "Modifier mon compte", edit_user_registration_path(current_user), class:"btn btn-outline-primary btn-sm mr-4" %>
+                                    <%= link_to 'Retour vers mon profil', @user, class:"btn btn-outline-secondary btn-sm mr-4 mt-4" %>
                                 </div>
                         </div>
                         <div class="col card p-5" style="width:450px;">
