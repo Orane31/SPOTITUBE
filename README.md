@@ -2,7 +2,7 @@
 
 The SPOTITUBE Team is composed of five coding enthusiasts coming from various parts of France.
 
-###The SPOTITUBE app enables you to create collaborative playlists with YouTube videos:
+### The SPOTITUBE app enables you to create collaborative playlists with YouTube videos:
 
 - It is written in Ruby On Rails using the THP guidelines ;-)
 
@@ -19,5 +19,3 @@ The SPOTITUBE Team is composed of five coding enthusiasts coming from various pa
   - Add/watch videos on playlists you've been invited on
   - Create accounts w/ profile pictures
     ...and eventually much more to come ^^
-
-- ...
