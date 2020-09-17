@@ -1,38 +1,53 @@
-<html>
+<div id="primary" class="p-t-b-30 height-full">
+    <div class="container">
 
-<div class='container'>
+        <!-- Sign in form -->
+        <div class="row">
+            <div class="col-md-10 mx-md-auto">
+                <div class="mt-5">
+                    <div class="row grid">
+                        <div class="col-md-5  p-5">
+                            <h1 class="mt-3 font-weight-lighter">Mon profil</h1>
+                            <%= link_to "Modifer mon profil", edit_user_path(current_user), class:"btn btn-outline-primary btn-sm mr-4 " %>
+                                    <br>
+                                    <%= link_to "Modifier mon compte utilisateur", edit_user_password_path(current_user), class:"btn btn-outline-secondary btn-sm mt-3" %>
+                        </div>
+                        <div class="col card p-5" style="width:600px;">
+                                <!-- Input -->
+                                <div class="body row">
+                                    <!-- Input playlist title -->
+                                    <div class="col">
+                                        <figure class="avatar avatar-xl">
+                                                    <%if @user.avatar.attached?%>
+                                                    <%= image_tag @user.avatar, alt: 'avatar' %>
+                                                <%else%>
+                                                    <%= image_tag "/assets/images/spoticon.png", alt: 'avatar' %>
+                                                <%end%> 
+                                        </figure>
+                                        <h4><%= @user.name %></h4>
+                                    </div>
+                                    <!-- Input playlist description-->
+                                    <div class="col">
+                                        <div>
+                                            <h5 class="mb-1">Description</h5>
+                                            <% if @user.description.blank? %>
+                                                <span>Vous n'avez pas encore complété cette partie.</span>
+                                            <% else %>
+                                                <span><%= @user.description %></span>
+                                            <% end %>
+                                        </div>
+                                    </div>
+                                    <!-- Radio buttons private mode -->
+                                    
+                                    
+                                </div>
 
- <h1 class="display-4-selection text-center my-5">Mon Profil</h1>
-
-
-  <div class="row justify-content-center">
-    <div class="card border-primary">
-      <div class="card-header">
-        <p class="h3 text-center"> <%= @user.name %></p>
-      </div>
-
-      <h3 class="text-center">Votre photo de profil</h3>
-          <%if @user.avatar.attached?%>
-            <%= image_tag @user.avatar, alt: 'avatar' %>
-          <%else%>
-            <p class="text-center">=== Vous n'avez pas encore de photo de profil ===</p>
-          <%end%> 
-
-      <div class="card-body text-primary">
-        <h5 class="card-title text-center">------------ Mes informations ------------ </h5>
-        <p class="card-text text-center"><span class="h6 text-center">Ma description:</span><br> <span class="ml-3 text-center"><%= @user.description %></span><br></p>
-          <p class="card-text text-center"><span class="h6 text-center">Mon email:</span><br> <span class="ml-3 text-center" ><%= @user.email %></span><br></p><br>
-
-      </div>
+            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <br>
-  <div class="text-center">
-    <%= link_to "Modifer mon profil", edit_user_path(current_user), class: "btn btn-primary mr-5" %>
-    <%= link_to "Modifier mon mot de passe", edit_user_password_path(current_user), class: "btn btn-primary mr-5" %>
-    <%= link_to 'Retour Accueil', root_path, class:"btn btn-secondary" %>
-    <br><br><br>
-
-  </div>
 </div>
-</html>

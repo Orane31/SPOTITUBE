@@ -1,12 +1,6 @@
-<div id="primary" class="p-t-b-100 height-full">
+<div id="primary" class="p-t-b-50 height-full">
     <div class="container">
-        <div class="text-center s-14 l-s-2 my-5">
-            <a class="my-5" href="index.html">
 
-                <span>SPOTITUBE</span>
-
-            </a>
-        </div>
         <!-- Sign in form -->
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
@@ -38,6 +32,12 @@
                                                 <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", placeholder: 'Email', class: 'form-control' %>
                                         </div>
                                     </div>
+                                    <!-- Input name -->
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                                <%= f.text_field :name, autofocus: true, required: true, autocomplete: "pseudo", placeholder: 'Pseudo', class: 'form-control' %>
+                                        </div>
+                                    </div>
                                     <!-- Input password -->
                                     <div class="form-group form-float">
                                         <div class="form-line">
@@ -58,7 +58,6 @@
                                             <small>Mot de passe identique au précédent</small>
                                         </div>
                                         <br>
-
                                     <input type="submit" class="btn btn-outline-primary btn-sm pl-4 pr-4" value="S'inscrire">
                                 </div>
             <% end %>
