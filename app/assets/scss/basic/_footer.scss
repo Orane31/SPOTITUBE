@@ -1,9 +1,5 @@
 
-
-footer {
-  background-color: #fffff;
-  border-top: 1px solid #eee;
-  padding: 35px 0 0;
+footer {position: absolute; bottom: 0; left: 0; right: 0}
 
   @include phone {
     .brand {
