@@ -75,6 +75,3 @@ gem 'dotenv-rails'
 gem 'administrate'
 
 #gem 'therubyracer'
-
-
-

@@ -45,25 +45,32 @@
                                     <div class="col-lg-3 col-md-4 col-sm-6 my-2">
                                         <figure>
                                             <div class="img-wrapper">
-                                                <%= image_tag("a150.jpg") %>
+                                                <%= image_tag("heartless.png") %>
                                                 <div class="img-overlay text-white text-center">
                                                     <a href="<%= playlist_path(:id => playlist.id) %>">
                                                         <div>
                                                             <h5 class="mt-5"><%= playlist.title %></h5>
-                                                            <span><%= playlist.videos.count %> vidéo(s)</span>
+                                                            <% if playlist.videos.count < 1 %>
+                                                                <span><%= playlist.videos.count %> vidéos</span>
+                                                            <% elsif playlist.videos.count == 0 %>
+                                                                <span>Cette playlist est vide</span>
+                                                            <% else playlist.videos.count == 1 %>
+                                                                <span><%= playlist.videos.count %> vidéo</span>
+                                                            <% end %>
+                                                            <i class="fas fa-link"></i>
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="figure-title text-center p-2">
                                                     <h5><%= playlist.title %></h5>
                                                     <% if playlist.videos.count < 1 %>
-                                                    <span><%= playlist.videos.count %> vidéos</span>
+                                                        <span><%= playlist.videos.count %> vidéos</span>
                                                     <% elsif playlist.videos.count == 0 %>
-                                                    <span>Cette playlist est vide</span>
+                                                        <span>Cette playlist est vide</span>
                                                     <% else playlist.videos.count == 1 %>
-                                                    <span><%= playlist.videos.count %> vidéo</span>
+                                                        <span><%= playlist.videos.count %> vidéo</span>
                                                     <% end %>
-
+                                                    
                                                 </div>
                                             </div>
                 
@@ -96,12 +103,14 @@
                                     <div class="col-lg-3 col-md-4 col-sm-6 my-2">
                                         <figure>
                                             <div class="img-wrapper">
-                                                <%= image_tag("spoticonlightgreen.png") %>
+                                                <%= image_tag("heartless.png") %>
                                                 <div class="img-overlay text-white text-center">
                                                     <a href="<%= playlist_path(:id => playlist.id) %>">
                                                         <div>
                                                             <h5 class="mt-5"><%= playlist.title %></h5>
                                                             <span>Playlist de <%= playlist.owner.name %></span>
+                                                        </div>
+                                                        <div class="s-24 text-primary icon-link">
                                                         </div>
                                                     </a>
                                                 </div>
