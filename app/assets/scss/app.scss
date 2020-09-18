@@ -1,0 +1,70 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:    Record Music Event Multipurpose
+Version:    1.0.0
+
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Table of contents]
+1. All common core files (Variables / colors / bootstrap )
+2- Plugins
+3- Panel Components
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[1. All common core files]
+*/
+//// Necessary Modules
+@import 'basic/variables';
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../node_modules/lightslider/dist/css/lightslider";
+@import "../../../node_modules/lightgallery/dist/css/lightgallery.min";
+@import '../fonts/lineicons';
+@import '../fonts/roboto/roboto';
+@import '../scss/libs/animations';
+@import "../scss/libs/lightslider";
+@import "basic/responsive-helper";
+@import "basic/navDefault";
+@import 'basic/mixins';
+@import "basic/icon";
+@import "basic/base";
+@import "basic/breadcrumbs";
+@import "basic/figure";
+@import "basic/preloader";
+@import "basic/social";
+@import "basic/helper";
+@import "libs/colors";
+@import "components/lightSlider";
+/*------------------------------------------------------------------
+[2. Plugins]
+*/
+// Snakbar
+@import "../../../node_modules/node-snackbar/dist/snackbar.min";
+// Avatar Placeholder
+@import "libs/letters";
+@import "font-awesome";
+/*------------------------------------------------------------------
+[3. Components]
+*/
+@import "components/_nav";
+@import "components/player";
+@import "components/_xvslider";
+@import "components/_forms";
+@import "components/_forms-material";
+@import "components/sidebarMenu";
+@import "components/shortcodes";
+@import "components/services";
+@import "components/sticky";
+@import "components/counter";
+@import "components/nav";
+@import "components/control-sidebar";
+@import "components/timeline";
+@import "components/preloaders";
+@import "components/search";
+@import "basic/overlay";
+@import "basic/card";
+@import "basic/theme-dark";
+@import "templates/template-contact";
+@import "basic/rtl";
+
+

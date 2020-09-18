@@ -1,0 +1,11 @@
+.card-img-overlay {
+  top: auto;
+}
+
+.card-header {
+  position: relative;
+  .card-handle {
+    position: absolute;
+    right: 20px;
+  }
+}

@@ -1,0 +1,22 @@
+.has-bottom-gradient {
+  position: relative;
+  z-index: 1;
+}
+
+.bottom-gradient::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  content: '';
+  bottom: 0;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, #ecf0f5 100%);
+  margin-top: -600px;
+  height: 400px;
+}
+
+.bottom-gradient-200::after {
+  margin-top: -200px;
+  height: 200px;
+}
+
+

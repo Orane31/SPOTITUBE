@@ -1,0 +1,69 @@
+.theme-dark, .control-sidebar {
+
+  background: $body-dark;
+  .card, .main-sidebar, &.card, &.main-sidebar, &.body, .navbar, &.navbar, .list-group-item, .loader, .searchOverlay::before, .dropdown-menu, pre {
+    background: $sidebar-dark-bg !important;
+  }
+  .list-group-item, .b-b, .b-r, .b-l, .b-t, &.b-b, &.b-r, &.b-l, &.b-t, .table tr, .table th, .table td, .card, .card-header, .card-footer, .form-material .form-group .form-line, .sidebar-header, .table-striped tbody tr:nth-of-type(2n+1) {
+    border-color: $brand-border-dark !important;
+  }
+
+  .dropdown-menu{
+    border: 1px solid;
+  }
+  .form-control {
+    border-color: #243049;
+    background: $body-dark;
+    &:focus {
+      border-color: $brand-primary;
+    }
+  }
+  .form-material {
+
+    .form-control {
+      border-bottom: 1px solid #243049;
+      background: transparent !important;
+    }
+  }
+  //overly
+  .bottom-gradient::after {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(19, 23, 34, 1) 100%);
+
+  }
+
+  .theme-text {
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    strong,
+    a,
+    b,
+    li,
+    i {
+      @include color(#fff)
+    }
+    @include color(#fff)
+  }
+
+  // Hovers
+  .sidebar-menu li a:hover, .table-hover tbody tr:hover, .light, .card-header .white {
+    background: $sidebar-dark-hover-bg;
+  }
+  .sidebar-tabs, .tab-content, &.offcanvas .sidebar-menu > li, .offcanvas .sidebar-menu > li {
+    border-color: $brand-border-dark !important;
+    a {
+      &.active {
+        color: $brand-primary;
+      }
+      &.nav-link {
+        color: $white;
+      }
+    }
+  }
+}

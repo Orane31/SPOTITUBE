@@ -1,0 +1,144 @@
+<% if !user_signed_in? %>            
+    <div class="xv-slide" data-bg-possition="top">
+        <div class="has-bottom-gradient">
+            <div class="p-md-5 p-3">
+                <div class="row">
+                    <div class="col-12 col-lg-6 animated">
+                        <div class="xv-slider-content clearfix color-white">
+                            <br>
+                                <h1 class="s-64 mt-5 font-weight-lighter">Spotitube</h1>
+                                    <p class="s-24 font-weight-lighter">Vos playlists Youtube en mode collaboratif.</p>
+                                        <div class="pt-3">
+                                            <%= link_to "Créez votre première playlist !", new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+                                        </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/PwBiGSTtEg8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>
+
+<% if user_signed_in? %>
+
+        <!---Playlists Index --->
+
+        <div class="container-fluid relative animatedParent animateOnce">
+                <div class="animated p-5 ml-lg-5 mr-lg-5">
+                    <section>
+                        <div class="relative mb-5">
+                            <br>
+                            <br>
+                            <br>
+                            <h1 class="mb-2 text-primary">Mes playlists</h1>
+                            <% if current_user.playlists.count == 0 %>
+                          
+                            <p>Vous n'avez pas encore de playlist</p>
+                            <%= link_to "Créez votre première playlist !", new_playlist_path, class: 'btn btn-primary btn-lg' %>
+
+                            
+                        </div>
+                        <% else %>
+                        <div class="row has-items-overlay">
+                            <% @playlists.each do |playlist| %>
+                                <% if playlist.owner_id == current_user.id %>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+                                        <figure>
+                                            <div class="img-wrapper">
+                                                <%= image_tag("heartless.png") %>
+                                                <div class="img-overlay text-white text-center">
+                                               
+                                                    <%= link_to (playlist_path(:id => playlist.id)) do %> 
+                                                        
+                                                            <h5 class="mt-5 mb-5"><%= playlist.title %></h5>
+                                                            <div class="mb-5">
+                                                                <%= image_tag("link-icon.png", size: "30") %>
+                                                            </div>
+                                                            <div>
+                                                                <% if playlist.videos.count == 0 %>
+                                                                    <span class="mt-5 mb-5">Cette playlist est vide</span>
+                                                                <% elsif playlist.videos.count == 1 %>
+                                                                    <span class="mt-5 mb-5"><%= playlist.videos.count %> vidéo</span>
+                                                                <% else playlist.videos.count < 1 %>
+                                                                    <span class="mt-5 mb-5"><%= playlist.videos.count %> vidéos</span>
+                                                                <% end %>
+                                                            </div>
+                                                    <% end %>
+                                                </div>
+                                                <div class="figure-title text-center p-2">
+                                                    <h5><%= playlist.title %></h5>
+                                                    <% if playlist.videos.count == 0 %>
+                                                        <span>Cette playlist est vide</span>
+                                                    <% elsif playlist.videos.count == 1 %>
+                                                        <span><%= playlist.videos.count %> vidéo</span>
+                                                    <% else playlist.videos.count < 1 %>
+                                                        <span><%= playlist.videos.count %> vidéos</span>
+                                                    <% end %>
+                                                    
+                                                </div>
+                                            </div>
+                                        </figure>
+                                    </div>
+                                <% end %>
+                            <% end %>
+                        <% end %>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+
+            <!---Collaboraions Index--->
+            <div class="container-fluid relative animatedParent animateOnce">
+                <div class="animated p-5 ml-lg-5 mr-lg-5">
+                    <section>
+                        <div class="relative mb-5">
+                            <br>
+                            <br>
+                            <br>
+                            <h1 class="mb-2 text-primary">Mes collaborations</h1>
+                            <% if Collaboration.where(:collaborator_id => current_user.id).count == 0 %>
+                                <p>Vous n'avez pas encore été désigné comme collaborateur sur une playlist.</p>
+                            <% end %>
+                        </div>
+                        <div class="row has-items-overlay">
+                            <% @playlists.each do |playlist| %>
+                                <% if collaborates?(playlist) %>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+                                        <figure>
+                                            <div class="img-wrapper">
+                                                <%= image_tag("heartless.png") %>
+                                                <div class="img-overlay text-white text-center">
+                                                    <%= link_to (playlist_path(:id => playlist.id)) do %> 
+                                                        <div>
+                                                            <h5 class="mt-5"><%= playlist.title %></h5>
+                                                            <span>Playlist de <%= playlist.owner.name %></span>
+                                                        </div>
+                                                        <div class="s-24 text-primary icon-link">
+                                                        </div>
+                                                    <% end %>
+                                                </div>
+                                                <div class="figure-title text-center p-2">
+                                                    <h5><%= playlist.title %></h5>
+                                                    <span>Playlist de <%= playlist.owner.name %></span>
+                                                </div>
+                                            </div>
+                
+                                        </figure>
+                                    </div>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        
+
+
+
+    </main><!--@Page Content-->
+
+    <% end %>

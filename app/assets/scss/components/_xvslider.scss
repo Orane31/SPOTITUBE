@@ -1,0 +1,46 @@
+.xv-slide {
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  height: 440px;
+  background-image:linear-gradient(black, #3A6073, #131722 100%);
+  
+}
+
+.mainfooter.xv-slide {
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  height: 300px;
+  background-image:linear-gradient(#131722, #3A6073, black 100%);
+  margin-top: 400px;
+  margin-bottom: -300px;
+}
+
+.lSAction a {
+
+  width: 40px;
+  height: 40px;
+  display: block;
+  background: black;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+
+}
+
+.lSAction .icon {
+
+  font-size: 25px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+
+}
+
+//.lSAction > .lSNext {
+//  right: -20px;
+//}
+//.lSAction > .lSPrev {
+//  left: -20px;
+//}

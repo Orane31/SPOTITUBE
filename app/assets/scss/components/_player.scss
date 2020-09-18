@@ -1,0 +1,20 @@
+.player-bar {
+  @include tablet-and-phone {
+    width: auto;
+  }
+  .btn-link {
+    text-decoration: none;
+  }
+
+}
+
+#waveform {
+  height: 50px;
+  @include phone {
+    display: none;
+  }
+}
+
+.icon-pause::before {
+  content: "\e9e5" !important;
+}

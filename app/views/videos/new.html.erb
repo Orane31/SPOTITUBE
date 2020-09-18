@@ -1,0 +1,51 @@
+<div id="primary" class="p-t-b-30 height-full">
+    <div class="container">
+
+        <!-- Sign in form -->
+        <div class="row">
+            <div class="col-md-10 mx-md-auto">
+                <div class="mt-5">
+                    <div class="row grid">
+                        <div class="col-md-5  p-5">
+                            <h1 class="mt-3 font-weight-lighter">Ajouter une vidéo à <%= @chosen_playlist.title %></h1>
+
+                        </div>
+                        <div class="col card p-5" style="width:500px">
+                            <form action="<%= playlist_videos_path %>" method="POST">
+                            <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
+                                <!-- Input -->
+                                <div class="body">
+                                    <!-- Input playlist title -->
+                                    <div class="form-group form-float mr-5" >
+                                        <div>
+                                            <h5 class="mb-1">Titre de la vidéo</h5>
+                                        </div>
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" name='title' placeholder="Insérer le titre ici">
+                                        </div>
+                                    </div>
+                                    <!-- Input playlist description-->
+                                    <div class="form-group form-float mr-5">
+                                        <div>
+                                            <h5 class="mb-1">Url de la vidéo</h5>
+                                        </div>
+                                        <div class="form-line">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name='url' placeholder="Insérer le lien ici">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Validation -->
+                                    <div class="form-group form-float  mr-5">
+                                        <br>
+                                      <button type="submit" class="btn btn-outline-primary">Ajouter ma vidéo</button>
+                                    </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

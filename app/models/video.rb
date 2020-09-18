@@ -1,4 +1,9 @@
 class Video < ApplicationRecord
-    has_many :video_playlists
-    has_many :playlists, through: :video_playlists
+    belongs_to :playlist
+
+    validates :title, presence: true, length: { maximum: 30 }
+    validates :url, presence: true
+
+
+    #add validates :platform, presence: true
 end
