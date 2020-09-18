@@ -10,7 +10,7 @@ The SPOTITUBE Team is composed of five coding enthusiasts coming from various pa
 
 - Rails 5.2.x w/ PostgreSQL, Ruby 2.5.1.
 
-- Dependencies : Devises, AWS, bcrypt... among others.
+- Dependencies : Devise, AWS... among others.
 
 - Functionalities :
 

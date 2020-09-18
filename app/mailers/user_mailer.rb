@@ -2,13 +2,13 @@ class UserMailer < ApplicationMailer
     default from: 'kriefanthony@gmail.com'
 
     def welcome_email(user)
-        #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
+        #Retrieve the User instance in order to transfer it to the view in @user mode.
         @user = user 
     
-        #on définit une variable @url qu'on utilisera dans la view d’e-mail
+        #Define an @url variable to be used in the e-mail view.
         @url  = 'http://stt-dev.herokuapp.com/login' 
     
-        # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
+        #Invoking mail() enables sending e-mails w/ a recipient and a subject.
         mail(to: @user.email, subject: 'Bienvenue chez nous !') 
       end
 

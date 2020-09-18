@@ -7,7 +7,6 @@ module VideosHelper
       youtube_url[/^.*((v\/)|(embed\/)|(watch\?))\??v?=?([^\&\?]*).*/]
       youtube_id = $5
     end
-  
   end
 
 end

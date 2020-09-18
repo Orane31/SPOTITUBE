@@ -3,15 +3,15 @@ class CollaborationMailer < ApplicationMailer
     default from: 'kriefanthony@gmail.com'
 
     def you_are_collaborating(collaboration)
-        #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
+        #Retrieve the User instance in order to transfer it to the view in @user mode.
         @collaboration = Collaboration.find(collaboration.id)
         @recipient = User.find(@collaboration.collaborator_id)
         @playlist = Playlist.find(@collaboration.playlist_id)
     
-        #on définit une variable @url qu'on utilisera dans la view d’e-mail
+        #Define an @url variable to be used in the e-mail view.
         @url  = 'http://stt-dev.herokuapp.com/' 
     
-        # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
+        #Invoking mail() enables sending e-mails w/ a recipient and a subject.
         mail(to: @collaboration.collaborator.email, subject: 'Tu as été invité(e) à participer à la playlist #{@collaboration.playlist.title} !') 
       end
 end

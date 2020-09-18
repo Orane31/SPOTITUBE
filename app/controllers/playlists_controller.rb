@@ -57,12 +57,12 @@ class PlaylistsController < ApplicationController
         end
     end
 
-  def is_owner?
-    if current_user.id != @playlist.id
+    def is_owner?
+      if current_user.id != @playlist.id
       flash[:danger] = "Vous ne pouvez pas acceder à cette page"
       redirect_to root_path
+      end
     end
-  end
 
 
 
